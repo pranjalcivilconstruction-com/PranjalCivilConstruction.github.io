@@ -27,9 +27,6 @@
 </script>
 
 <style>
-/* ═══════════════════════════════════════════
-   DESIGN SYSTEM – LIGHT PREMIUM THEME
-═══════════════════════════════════════════ */
 :root {
   --white: #ffffff;
   --off-white: #f8f9fa;
@@ -65,23 +62,13 @@ body {
   line-height: 1.6;
 }
 
-/* ── SUBTLE CONCRETE TEXTURE ── */
-.tex-concrete {
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(244,180,0,0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(244,180,0,0.04) 0%, transparent 40%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-}
-
 .tex-grid {
   background-image: linear-gradient(rgba(244,180,0,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(244,180,0,0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-/* ═══════════════════════════════════════════
-   NAVIGATION
-═══════════════════════════════════════════ */
+/* NAV */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -92,9 +79,7 @@ body {
   border-bottom: 1px solid rgba(244,180,0,0.15);
   transition: box-shadow 0.3s;
 }
-
 .nav.scrolled { box-shadow: var(--shadow-md); }
-
 .nav-inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -105,7 +90,6 @@ body {
   justify-content: space-between;
   gap: 24px;
 }
-
 .nav-logo {
   display: flex;
   align-items: center;
@@ -113,7 +97,6 @@ body {
   text-decoration: none;
   flex-shrink: 0;
 }
-
 .nav-logo-mark {
   width: 42px; height: 42px;
   background: var(--yellow);
@@ -125,26 +108,10 @@ body {
   letter-spacing: -0.5px;
   box-shadow: 0 4px 14px rgba(244,180,0,0.4);
 }
-
 .nav-logo-text { line-height: 1.1; }
-.nav-logo-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-}
-.nav-logo-sub {
-  font-size: 10px;
-  color: var(--grey-500);
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 4px;
-  list-style: none;
-}
-
+.nav-logo-name { font-size: 15px; font-weight: 700; color: var(--text); }
+.nav-logo-sub { font-size: 10px; color: var(--grey-500); font-weight: 400; letter-spacing: 0.5px; }
+.nav-links { display: flex; gap: 4px; list-style: none; }
 .nav-links a {
   display: block;
   padding: 8px 14px;
@@ -155,65 +122,26 @@ body {
   border-radius: 8px;
   transition: all 0.2s;
 }
-
-.nav-links a:hover {
-  color: var(--text);
-  background: var(--yellow-pale);
-}
-
+.nav-links a:hover { color: var(--text); background: var(--yellow-pale); }
 .nav-actions { display: flex; gap: 10px; align-items: center; }
-
 .btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Poppins', sans-serif; font-weight: 600; border-radius: 50px; cursor: pointer; transition: all 0.25s; text-decoration: none; white-space: nowrap; }
-
 .btn-sm { font-size: 13px; padding: 9px 20px; }
 .btn-md { font-size: 14px; padding: 12px 28px; }
 .btn-lg { font-size: 16px; padding: 15px 36px; }
-
-.btn-primary {
-  background: var(--yellow);
-  color: #fff;
-  border: 2px solid var(--yellow);
-  box-shadow: 0 4px 18px rgba(244,180,0,0.3);
-}
-.btn-primary:hover {
-  background: var(--yellow-dark);
-  border-color: var(--yellow-dark);
-  box-shadow: var(--shadow-yellow);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--text);
-  border: 2px solid var(--grey-300);
-}
-.btn-outline:hover {
-  border-color: var(--yellow);
-  color: var(--yellow-dark);
-  background: var(--yellow-pale);
-  transform: translateY(-2px);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--text);
-  border: none;
-  padding-left: 0; padding-right: 0;
-  font-weight: 600;
-  font-size: 14px;
-}
+.btn-primary { background: var(--yellow); color: #fff; border: 2px solid var(--yellow); box-shadow: 0 4px 18px rgba(244,180,0,0.3); }
+.btn-primary:hover { background: var(--yellow-dark); border-color: var(--yellow-dark); box-shadow: var(--shadow-yellow); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--text); border: 2px solid var(--grey-300); }
+.btn-outline:hover { border-color: var(--yellow); color: var(--yellow-dark); background: var(--yellow-pale); transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--text); border: none; padding-left: 0; padding-right: 0; font-weight: 600; font-size: 14px; }
 .btn-ghost:hover { color: var(--yellow-dark); }
 .btn-ghost .arrow { transition: transform 0.2s; display: inline-block; }
 .btn-ghost:hover .arrow { transform: translateX(5px); }
-
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; transition: 0.3s; }
 
-/* ═══════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════ */
+/* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -221,7 +149,6 @@ body {
   background: var(--cream);
   padding-top: 72px;
 }
-
 .hero::before {
   content: '';
   position: absolute;
@@ -230,7 +157,6 @@ body {
     radial-gradient(ellipse 80% 60% at 70% 40%, rgba(244,180,0,0.08) 0%, transparent 60%),
     radial-gradient(ellipse 50% 40% at 10% 80%, rgba(244,180,0,0.05) 0%, transparent 50%);
 }
-
 .hero-grid-bg {
   position: absolute;
   inset: 0;
@@ -239,20 +165,18 @@ body {
     linear-gradient(90deg, rgba(244,180,0,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
-
 .hero-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 60px 32px;
   position: relative;
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
   width: 100%;
 }
-
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -268,19 +192,11 @@ body {
   opacity: 0;
   animation: slideUp 0.6s ease forwards;
 }
-
-.hero-eyebrow-dot {
-  width: 8px; height: 8px;
-  background: var(--yellow);
-  border-radius: 50%;
-  animation: blink 2s infinite;
-}
-
+.hero-eyebrow-dot { width: 8px; height: 8px; background: var(--yellow); border-radius: 50%; animation: blink 2s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(38px, 4.5vw, 62px);
+  font-size: clamp(32px, 4vw, 54px);
   font-weight: 800;
   line-height: 1.15;
   color: var(--text);
@@ -288,98 +204,55 @@ body {
   opacity: 0;
   animation: slideUp 0.7s ease 0.1s forwards;
 }
-
-.hero-title em {
-  font-style: normal;
-  color: var(--yellow-dark);
-  position: relative;
-}
-
-.hero-title em::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--yellow);
-  border-radius: 2px;
-  opacity: 0.4;
-}
-
+.hero-title em { font-style: normal; color: var(--yellow-dark); position: relative; }
+.hero-title em::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--yellow); border-radius: 2px; opacity: 0.4; }
 .hero-subtitle {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--grey-700);
   font-weight: 400;
   line-height: 1.75;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   max-width: 480px;
   opacity: 0;
   animation: slideUp 0.7s ease 0.2s forwards;
 }
-
 .hero-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   opacity: 0;
   animation: slideUp 0.7s ease 0.3s forwards;
 }
-
 .hero-trust {
   display: flex;
   align-items: center;
   gap: 20px;
   opacity: 0;
   animation: slideUp 0.7s ease 0.4s forwards;
+  flex-wrap: wrap;
 }
-
-.hero-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--grey-500);
-  font-weight: 500;
-}
-
-.hero-trust-item .check {
-  width: 18px; height: 18px;
-  background: var(--yellow-light);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px;
-  color: var(--yellow-dark);
-}
-
+.hero-trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--grey-500); font-weight: 500; }
+.hero-trust-item .check { width: 18px; height: 18px; background: var(--yellow-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--yellow-dark); }
 .hero-trust-divider { width: 1px; height: 24px; background: var(--grey-300); }
-
-/* Hero right – image collage */
 .hero-visual {
   position: relative;
-  height: 500px;
+  height: 440px;
   opacity: 0;
   animation: slideRight 0.9s ease 0.3s forwards;
 }
-
-.hero-card {
-  position: absolute;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: var(--grey-200);
-}
-
-.hero-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+.hero-card { position: absolute; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--grey-200); }
+.hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-card-1 { top: 0; left: 0; width: 56%; height: 64%; }
 .hero-card-2 { top: 12%; right: 0; width: 40%; height: 50%; }
 .hero-card-3 { bottom: 0; left: 8%; width: 44%; height: 40%; }
 .hero-card-4 { bottom: 5%; right: 2%; width: 38%; height: 46%; }
+
+/* Gradient placeholders for missing images */
+.hero-card-1 { background: linear-gradient(135deg, #f4e8c0, #e8d5a0); }
+.hero-card-2 { background: linear-gradient(135deg, #d0e8d0, #b8d8b8); }
+.hero-card-3 { background: linear-gradient(135deg, #c8dce8, #a8c8e0); }
+.hero-card-4 { background: linear-gradient(135deg, #e8d0d0, #d8b8b8); }
 
 .hero-float-badge {
   position: absolute;
@@ -393,29 +266,121 @@ body {
   z-index: 5;
   animation: float 4s ease-in-out infinite;
 }
-
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-
 .hero-float-badge-1 { top: -10px; right: 10%; }
 .hero-float-badge-2 { bottom: -10px; left: 5%; animation-delay: 2s; }
-
 .hero-float-icon { font-size: 22px; }
 .hero-float-text strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); line-height: 1; }
 .hero-float-text span { font-size: 11px; color: var(--grey-500); }
-
 @keyframes slideUp { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(28px); } }
 @keyframes slideRight { to { opacity: 1; transform: translateX(0); } from { opacity: 0; transform: translateX(40px); } }
 
-/* ═══════════════════════════════════════════
-   STATS TICKER
-═══════════════════════════════════════════ */
+/* QUICK INQUIRY FORM (below hero) */
+.quick-inquiry {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 0 32px;
+  position: relative;
+  z-index: 10;
+}
+.quick-inquiry-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.qi-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.qi-left {}
+.qi-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.qi-tagline span { color: var(--yellow); }
+.qi-sub { font-size: 13px; color: rgba(255,255,255,0.55); }
+.qi-right {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(244,180,0,0.2);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  backdrop-filter: blur(10px);
+}
+.qi-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+.qi-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.qi-field input,
+.qi-field select {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: all 0.2s;
+}
+.qi-field input::placeholder { color: rgba(255,255,255,0.4); }
+.qi-field select option { background: #1a1a2e; color: #fff; }
+.qi-field input:focus,
+.qi-field select:focus {
+  border-color: var(--yellow);
+  background: rgba(255,255,255,0.15);
+}
+.qi-submit-btn {
+  background: var(--yellow);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(244,180,0,0.4);
+}
+.qi-submit-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+.qi-success {
+  display: none;
+  background: rgba(46,125,50,0.2);
+  border: 1px solid rgba(76,175,80,0.5);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #81c784;
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* STATS */
 .stats-bar {
   background: var(--white);
   border-top: 1px solid var(--grey-200);
   border-bottom: 1px solid var(--grey-200);
-  padding: 32px 32px;
+  padding: 32px;
 }
-
 .stats-bar-inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -423,47 +388,22 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
 }
-
 .stat-card {
   text-align: center;
   padding: 24px 16px;
   border-right: 1px solid var(--grey-200);
   position: relative;
 }
-
 .stat-card:last-child { border-right: none; }
-
-.stat-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.stat-number {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1;
-  font-family: 'Playfair Display', serif;
-}
-
+.stat-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+.stat-number { font-size: 38px; font-weight: 800; color: var(--text); line-height: 1; font-family: 'Playfair Display', serif; }
 .stat-number .accent { color: var(--yellow-dark); }
+.stat-label { font-size: 13px; color: var(--grey-500); font-weight: 500; margin-top: 6px; }
 
-.stat-label {
-  font-size: 13px;
-  color: var(--grey-500);
-  font-weight: 500;
-  margin-top: 6px;
-}
-
-/* ═══════════════════════════════════════════
-   SECTIONS COMMON
-═══════════════════════════════════════════ */
+/* SECTIONS */
 .section { padding: 96px 32px; }
 .section-inner { max-width: 1280px; margin: 0 auto; }
-
 .section-header { text-align: center; margin-bottom: 72px; }
-
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -475,654 +415,205 @@ body {
   color: var(--yellow-dark);
   margin-bottom: 16px;
 }
-
-.section-eyebrow::before,
-.section-eyebrow::after {
-  content: '';
-  width: 28px;
-  height: 2px;
-  background: var(--yellow);
-  border-radius: 1px;
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
+.section-eyebrow::before, .section-eyebrow::after { content: ''; width: 28px; height: 2px; background: var(--yellow); border-radius: 1px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
 .section-title span { color: var(--yellow-dark); }
+.section-desc { font-size: 15px; color: var(--grey-700); max-width: 560px; margin: 0 auto; line-height: 1.75; }
 
-.section-desc {
-  font-size: 16px;
-  color: var(--grey-700);
-  max-width: 560px;
-  margin: 0 auto;
-  line-height: 1.75;
-}
-
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal-left.visible { opacity: 1; transform: translateX(0); }
 .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
 
-/* ═══════════════════════════════════════════
-   ABOUT
-═══════════════════════════════════════════ */
+/* ABOUT */
 .about { background: var(--off-white); }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-images {
-  position: relative;
-  height: 460px;
-}
-
-.about-img-main {
-  position: absolute;
-  top: 0; left: 0;
-  width: 68%;
-  height: 76%;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: var(--grey-200);
-}
-
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-images { position: relative; height: 460px; }
+.about-img-main { position: absolute; top: 0; left: 0; width: 68%; height: 76%; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); background: linear-gradient(135deg,#f0e6c0,#d8c890); }
 .about-img-main img { width: 100%; height: 100%; object-fit: cover; }
-
-.about-img-secondary {
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 52%;
-  height: 55%;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: var(--grey-200);
-  border: 5px solid var(--white);
-}
-
+.about-img-secondary { position: absolute; bottom: 0; right: 0; width: 52%; height: 55%; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); background: linear-gradient(135deg,#c0d8f0,#a0c0e0); border: 5px solid var(--white); }
 .about-img-secondary img { width: 100%; height: 100%; object-fit: cover; }
-
-.about-years-badge {
-  position: absolute;
-  bottom: 30%;
-  left: -16px;
-  background: var(--yellow);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
-  box-shadow: var(--shadow-yellow);
-  text-align: center;
-  z-index: 5;
-}
-
-.about-years-badge .num {
-  display: block;
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1;
-  font-family: 'Playfair Display', serif;
-}
-
-.about-years-badge .label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-.about-content {}
-
-.about-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.2;
-  color: var(--text);
-  margin-bottom: 16px;
-}
-
+.about-years-badge { position: absolute; bottom: 30%; left: -16px; background: var(--yellow); color: #fff; border-radius: var(--radius-sm); padding: 16px 20px; box-shadow: var(--shadow-yellow); text-align: center; z-index: 5; }
+.about-years-badge .num { display: block; font-size: 36px; font-weight: 800; line-height: 1; font-family: 'Playfair Display', serif; }
+.about-years-badge .label { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.9; }
+.about-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 16px; }
 .about-title span { color: var(--yellow-dark); }
-
-.about-desc {
-  font-size: 15px;
-  color: var(--grey-700);
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-
-.about-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 32px 0;
-}
-
-.about-feat {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.about-feat-icon {
-  width: 42px; height: 42px;
-  background: var(--yellow-pale);
-  border: 1px solid rgba(244,180,0,0.25);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.about-feat-text strong {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 2px;
-}
-
+.about-desc { font-size: 15px; color: var(--grey-700); line-height: 1.8; margin-bottom: 16px; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+.about-feat { display: flex; gap: 12px; align-items: flex-start; }
+.about-feat-icon { width: 42px; height: 42px; background: var(--yellow-pale); border: 1px solid rgba(244,180,0,0.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.about-feat-text strong { display: block; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
 .about-feat-text span { font-size: 12px; color: var(--grey-500); }
+.cert-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.cert-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1.5px solid rgba(244,180,0,0.35); border-radius: 50px; padding: 7px 16px; font-size: 12px; font-weight: 600; color: #8a6c00; box-shadow: var(--shadow-sm); }
 
-.cert-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 28px;
-}
-
-.cert-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--white);
-  border: 1.5px solid rgba(244,180,0,0.35);
-  border-radius: 50px;
-  padding: 7px 16px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #8a6c00;
-  box-shadow: var(--shadow-sm);
-}
-
-/* ═══════════════════════════════════════════
-   SERVICES
-═══════════════════════════════════════════ */
+/* SERVICES */
 .services { background: var(--white); }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .svc-card {
   background: var(--white);
   border: 1.5px solid var(--grey-200);
   border-radius: var(--radius);
   padding: 36px 28px;
-  cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
 }
-
-.svc-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--yellow);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: left;
-}
-
-.svc-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(244,180,0,0.3);
-}
-
+.svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--yellow); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+.svc-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: rgba(244,180,0,0.3); }
 .svc-card:hover::before { transform: scaleX(1); }
+.svc-icon-wrap { width: 60px; height: 60px; background: var(--yellow-pale); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; transition: all 0.3s; }
+.svc-card:hover .svc-icon-wrap { background: var(--yellow); transform: scale(1.1) rotate(-5deg); }
+.svc-name { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.svc-desc { font-size: 14px; color: var(--grey-700); line-height: 1.7; margin-bottom: 16px; }
+.svc-list { list-style: none; }
+.svc-list li { font-size: 13px; color: var(--grey-700); padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+.svc-list li::before { content: ''; width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; flex-shrink: 0; }
 
-.svc-icon-wrap {
-  width: 60px; height: 60px;
-  background: var(--yellow-pale);
-  border-radius: 16px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-  transition: all 0.3s;
-}
-
-.svc-card:hover .svc-icon-wrap {
-  background: var(--yellow);
-  transform: scale(1.1) rotate(-5deg);
-}
-
-.svc-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 10px;
-}
-
-.svc-desc {
-  font-size: 14px;
-  color: var(--grey-700);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.svc-list {
-  list-style: none;
-  margin-bottom: 24px;
-}
-
-.svc-list li {
-  font-size: 13px;
-  color: var(--grey-700);
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.svc-list li::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--yellow);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* ═══════════════════════════════════════════
-   GALLERY
-═══════════════════════════════════════════ */
+/* GALLERY */
 .gallery { background: var(--grey-100); }
-
-.gallery-filter {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.filter-btn {
-  background: var(--white);
-  border: 1.5px solid var(--grey-200);
-  border-radius: 50px;
-  padding: 9px 22px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--grey-700);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.filter-btn.active, .filter-btn:hover {
-  background: var(--yellow);
-  border-color: var(--yellow);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(244,180,0,0.3);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.gallery-item {
-  position: relative;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  cursor: pointer;
-  aspect-ratio: 1;
-  background: var(--grey-200);
-}
-
-.gallery-item:nth-child(1),
-.gallery-item:nth-child(7) {
-  grid-column: span 2;
-  aspect-ratio: 16/9;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: block;
-}
-
+.gallery-filter { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-btn { background: var(--white); border: 1.5px solid var(--grey-200); border-radius: 50px; padding: 9px 22px; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: var(--grey-700); cursor: pointer; transition: all 0.2s; }
+.filter-btn.active, .filter-btn:hover { background: var(--yellow); border-color: var(--yellow); color: #fff; box-shadow: 0 4px 16px rgba(244,180,0,0.3); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.gallery-item { position: relative; border-radius: var(--radius-sm); overflow: hidden; cursor: pointer; aspect-ratio: 1; background: var(--grey-200); }
+.gallery-item:nth-child(1), .gallery-item:nth-child(7) { grid-column: span 2; aspect-ratio: 16/9; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: block; }
 .gallery-item:hover img { transform: scale(1.08); }
-
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(244,180,0,0.82);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
+.gallery-overlay { position: absolute; inset: 0; background: rgba(244,180,0,0.82); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; opacity: 0; transition: opacity 0.3s ease; }
 .gallery-item:hover .gallery-overlay { opacity: 1; }
-
 .gallery-overlay-icon { font-size: 32px; color: #fff; }
 .gallery-overlay-text { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+/* Gallery placeholder colors */
+.gallery-item:nth-child(1) { background: linear-gradient(135deg,#f4d58d,#e8c060); }
+.gallery-item:nth-child(2) { background: linear-gradient(135deg,#a8d8a8,#80c080); }
+.gallery-item:nth-child(3) { background: linear-gradient(135deg,#a8c8e8,#80a8d0); }
+.gallery-item:nth-child(4) { background: linear-gradient(135deg,#d8a8a8,#c08080); }
+.gallery-item:nth-child(5) { background: linear-gradient(135deg,#d8c8a8,#c0a870); }
+.gallery-item:nth-child(6) { background: linear-gradient(135deg,#b8d8c8,#90c0a0); }
+.gallery-item:nth-child(7) { background: linear-gradient(135deg,#f0e0b0,#d8c080); }
+.gallery-item:nth-child(8) { background: linear-gradient(135deg,#c0c8e0,#a0a8d0); }
+.gallery-item:nth-child(9) { background: linear-gradient(135deg,#e0c8d0,#c0a0b0); }
+.gallery-item:nth-child(10) { background: linear-gradient(135deg,#c8e0d0,#a0c8b0); }
+.gallery-item:nth-child(11) { background: linear-gradient(135deg,#e8d8c0,#d0b890); }
+.gallery-item:nth-child(12) { background: linear-gradient(135deg,#d0c8e0,#b0a0c8); }
 
-/* ═══════════════════════════════════════════
-   TESTIMONIALS
-═══════════════════════════════════════════ */
+/* TESTIMONIALS */
 .testimonials { background: var(--white); }
-
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.testi-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-
-.testi-card {
-  background: var(--off-white);
-  border: 1.5px solid var(--grey-200);
-  border-radius: var(--radius);
-  padding: 32px;
-  position: relative;
-  transition: all 0.3s;
-}
-
-.testi-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: rgba(244,180,0,0.35);
-  transform: translateY(-4px);
-}
-
-.testi-card::before {
-  content: '"';
-  position: absolute;
-  top: 16px; right: 24px;
-  font-size: 80px;
-  color: rgba(244,180,0,0.15);
-  font-family: Georgia, serif;
-  line-height: 1;
-}
-
-.testi-stars { color: var(--yellow); font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
-
-.testi-text {
-  font-size: 14px;
-  color: var(--grey-700);
-  line-height: 1.8;
-  margin-bottom: 24px;
-  font-style: italic;
-}
-
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+.testi-card { background: var(--off-white); border: 1.5px solid var(--grey-200); border-radius: var(--radius); padding: 28px; position: relative; transition: all 0.3s; }
+.testi-card:hover { box-shadow: var(--shadow-md); border-color: rgba(244,180,0,0.35); transform: translateY(-4px); }
+.testi-card::before { content: '"'; position: absolute; top: 16px; right: 24px; font-size: 80px; color: rgba(244,180,0,0.15); font-family: Georgia, serif; line-height: 1; }
+.testi-stars-wrap { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; }
+.testi-stars { color: var(--yellow); font-size: 13px; }
+.testi-rating-num { font-size: 12px; font-weight: 700; color: var(--grey-700); }
+.testi-text { font-size: 14px; color: var(--grey-700); line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+.testi-footer { display: flex; justify-content: space-between; align-items: flex-end; }
 .testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar { width: 40px; height: 40px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0; }
+.testi-name { font-weight: 700; font-size: 13px; color: var(--text); }
+.testi-loc { font-size: 11px; color: var(--grey-500); }
+.testi-date { font-size: 11px; color: var(--grey-500); }
 
-.testi-avatar {
-  width: 44px; height: 44px;
-  background: var(--yellow);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 16px;
-  color: #fff;
-  flex-shrink: 0;
-}
-
-.testi-name { font-weight: 700; font-size: 14px; color: var(--text); }
-.testi-loc { font-size: 12px; color: var(--grey-500); }
-
-/* ═══════════════════════════════════════════
-   BLOG
-═══════════════════════════════════════════ */
-.blog { background: var(--grey-100); }
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.blog-card {
-  background: var(--white);
+/* WRITE REVIEW */
+.write-review-box {
+  background: var(--yellow-pale);
+  border: 1.5px solid rgba(244,180,0,0.3);
   border-radius: var(--radius);
-  overflow: hidden;
-  border: 1.5px solid var(--grey-200);
-  transition: all 0.3s;
-  cursor: pointer;
+  padding: 36px 40px;
+  max-width: 680px;
+  margin: 0 auto;
 }
-
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(244,180,0,0.3);
-}
-
-.blog-card-img {
-  height: 190px;
-  overflow: hidden;
-  position: relative;
-  background: var(--grey-200);
-}
-
-.blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-.blog-card:hover .blog-card-img img { transform: scale(1.06); }
-
-.blog-cat {
-  position: absolute;
-  top: 12px; left: 12px;
-  background: var(--yellow);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 50px;
-}
-
-.blog-body { padding: 24px; }
-
-.blog-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-
-.blog-excerpt { font-size: 13px; color: var(--grey-700); line-height: 1.7; margin-bottom: 16px; }
-.blog-meta { font-size: 12px; color: var(--grey-500); display: flex; align-items: center; gap: 6px; }
-
-/* ═══════════════════════════════════════════
-   FAQ
-═══════════════════════════════════════════ */
-.faq { background: var(--white); }
-
-.faq-list { max-width: 760px; margin: 0 auto; }
-
-.faq-item {
+.write-review-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.star-picker { display: flex; gap: 6px; margin-bottom: 16px; }
+.star-pick { font-size: 28px; cursor: pointer; color: var(--grey-300); transition: color 0.15s, transform 0.15s; }
+.star-pick.active, .star-pick:hover { color: var(--yellow); transform: scale(1.15); }
+.review-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.rv-input {
+  width: 100%;
+  background: var(--white);
   border: 1.5px solid var(--grey-200);
   border-radius: var(--radius-sm);
-  margin-bottom: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.2s;
-}
-
-.faq-item.open { box-shadow: var(--shadow-sm); border-color: rgba(244,180,0,0.4); }
-
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  cursor: pointer;
+  padding: 11px 14px;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
   color: var(--text);
-  text-align: left;
-  transition: background 0.2s;
+  outline: none;
+  transition: border-color 0.2s;
 }
+.rv-input:focus { border-color: var(--yellow); }
+.rv-textarea { width: 100%; background: var(--white); border: 1.5px solid var(--grey-200); border-radius: var(--radius-sm); padding: 11px 14px; font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--text); outline: none; resize: vertical; transition: border-color 0.2s; }
+.rv-textarea:focus { border-color: var(--yellow); }
+.rv-submit { background: var(--yellow); color: #fff; border: none; border-radius: 50px; padding: 12px 32px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+.rv-submit:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+#dynamicReviews { margin-top: 32px; }
+.dynamic-review-card { background: var(--white); border: 1.5px solid rgba(244,180,0,0.2); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; position: relative; }
+.dynamic-review-card::before { content: '"'; position: absolute; top: 10px; right: 18px; font-size: 60px; color: rgba(244,180,0,0.12); font-family: Georgia, serif; line-height: 1; }
+.new-badge { display: inline-block; background: var(--yellow); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 50px; margin-left: 8px; vertical-align: middle; }
 
+/* BLOG */
+.blog { background: var(--grey-100); }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.blog-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-200); transition: all 0.3s; cursor: pointer; }
+.blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(244,180,0,0.3); }
+.blog-card-img { height: 180px; overflow: hidden; position: relative; background: var(--grey-200); }
+.blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.blog-card:hover .blog-card-img img { transform: scale(1.06); }
+.blog-card-img-1 { background: linear-gradient(135deg,#c8dce8,#a8c8e0); }
+.blog-card-img-2 { background: linear-gradient(135deg,#d0e8d0,#b8d8b8); }
+.blog-card-img-3 { background: linear-gradient(135deg,#f4d58d,#e8c060); }
+.blog-cat { position: absolute; top: 12px; left: 12px; background: var(--yellow); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; }
+.blog-body { padding: 22px; }
+.blog-title { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 8px; }
+.blog-excerpt { font-size: 13px; color: var(--grey-700); line-height: 1.7; margin-bottom: 14px; }
+.blog-meta { font-size: 12px; color: var(--grey-500); display: flex; align-items: center; gap: 6px; }
+
+/* FAQ */
+.faq { background: var(--white); }
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item { border: 1.5px solid var(--grey-200); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; transition: box-shadow 0.2s; }
+.faq-item.open { box-shadow: var(--shadow-sm); border-color: rgba(244,180,0,0.4); }
+.faq-q { width: 100%; background: none; border: none; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: var(--text); text-align: left; transition: background 0.2s; }
 .faq-q:hover { background: var(--off-white); }
 .faq-item.open .faq-q { background: var(--yellow-pale); color: var(--yellow-dark); }
-
-.faq-icon {
-  width: 28px; height: 28px;
-  background: var(--grey-200);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-  transition: all 0.3s;
-  font-weight: 700;
-}
-
+.faq-icon { width: 28px; height: 28px; background: var(--grey-200); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: all 0.3s; font-weight: 700; }
 .faq-item.open .faq-icon { background: var(--yellow); color: #fff; transform: rotate(45deg); }
-
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s;
-}
-
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
 .faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner { padding: 0 24px 20px; font-size: 14px; color: var(--grey-700); line-height: 1.8; }
 
-.faq-a-inner {
-  padding: 0 24px 20px;
-  font-size: 14px;
-  color: var(--grey-700);
-  line-height: 1.8;
-}
-
-/* ═══════════════════════════════════════════
-   QUOTE SECTION
-═══════════════════════════════════════════ */
-.quote-section {
-  background: linear-gradient(135deg, var(--yellow-pale) 0%, var(--cream) 100%);
-  border-top: 1.5px solid rgba(244,180,0,0.25);
-  border-bottom: 1.5px solid rgba(244,180,0,0.25);
-}
-
-.quote-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.quote-left-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
+/* INQUIRY FORM */
+.quote-section { background: linear-gradient(135deg, var(--yellow-pale) 0%, var(--cream) 100%); border-top: 1.5px solid rgba(244,180,0,0.25); border-bottom: 1.5px solid rgba(244,180,0,0.25); }
+.quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.quote-left-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
 .quote-left-title span { color: var(--yellow-dark); }
 .quote-left-desc { font-size: 15px; color: var(--grey-700); line-height: 1.8; margin-bottom: 32px; }
-
 .quote-contact-list { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 14px; }
-
-.quote-contact-list li a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 600;
-  transition: color 0.2s;
-}
+.quote-contact-list li a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; transition: color 0.2s; }
 .quote-contact-list li a:hover { color: var(--yellow-dark); }
-
-.qc-icon {
-  width: 40px; height: 40px;
-  background: var(--white);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
-}
-
-.quote-form-box {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 40px 36px;
-  box-shadow: var(--shadow-lg);
-  border: 1.5px solid rgba(244,180,0,0.15);
-}
-
-.form-title-qf {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.form-title-qf .dot {
-  width: 10px; height: 10px;
-  background: var(--yellow);
-  border-radius: 50%;
-}
-
+.qc-icon { width: 40px; height: 40px; background: var(--white); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: var(--shadow-sm); flex-shrink: 0; }
+.quote-form-box { background: var(--white); border-radius: var(--radius-lg); padding: 40px 36px; box-shadow: var(--shadow-lg); border: 1.5px solid rgba(244,180,0,0.15); }
+.form-title-qf { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.form-title-qf .dot { width: 10px; height: 10px; background: var(--yellow); border-radius: 50%; }
 .form-group { margin-bottom: 16px; }
-
-.form-group label {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--grey-700);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 7px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--grey-700); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+.form-group input, .form-group select, .form-group textarea {
   width: 100%;
   background: var(--off-white);
   border: 1.5px solid var(--grey-200);
@@ -1134,17 +625,8 @@ body {
   outline: none;
   transition: all 0.2s;
 }
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--yellow);
-  background: var(--white);
-  box-shadow: 0 0 0 4px rgba(244,180,0,0.1);
-}
-
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--yellow); background: var(--white); box-shadow: 0 0 0 4px rgba(244,180,0,0.1); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
 .btn-submit-full {
   width: 100%;
   background: var(--yellow);
@@ -1164,391 +646,102 @@ body {
   box-shadow: 0 6px 24px rgba(244,180,0,0.35);
   margin-top: 8px;
 }
+.btn-submit-full:hover { background: var(--yellow-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(244,180,0,0.45); }
+.success-banner { display: none; background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: var(--radius-sm); padding: 14px 20px; font-size: 14px; font-weight: 600; color: #2e7d32; text-align: center; margin-top: 14px; }
 
-.btn-submit-full:hover {
-  background: var(--yellow-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(244,180,0,0.45);
-}
-
-.success-banner {
-  display: none;
-  background: #e8f5e9;
-  border: 1.5px solid #a5d6a7;
-  border-radius: var(--radius-sm);
-  padding: 14px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #2e7d32;
-  text-align: center;
-  margin-top: 14px;
-}
-
-/* ═══════════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════════ */
+/* CONTACT */
 .contact { background: var(--off-white); }
-
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-
 .contact-detail-list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
-
 .cd-item { display: flex; gap: 16px; }
-
-.cd-icon {
-  width: 50px; height: 50px;
-  background: var(--white);
-  border: 1.5px solid var(--grey-200);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
-}
-
+.cd-icon { width: 50px; height: 50px; background: var(--white); border: 1.5px solid var(--grey-200); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: var(--shadow-sm); }
 .cd-title { font-size: 11px; font-weight: 700; color: var(--yellow-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 .cd-val { font-size: 15px; color: var(--text); line-height: 1.6; }
 .cd-val a { color: var(--text); text-decoration: none; font-weight: 600; }
 .cd-val a:hover { color: var(--yellow-dark); text-decoration: underline; }
-
-.timing-box {
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  border-left: 4px solid var(--yellow);
-  padding: 20px 24px;
-  box-shadow: var(--shadow-sm);
-}
-
+.timing-box { background: var(--white); border-radius: var(--radius-sm); border-left: 4px solid var(--yellow); padding: 20px 24px; box-shadow: var(--shadow-sm); }
 .timing-box h4 { font-size: 13px; font-weight: 700; color: var(--yellow-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 .timing-box p { font-size: 14px; color: var(--grey-700); margin-bottom: 4px; }
-
-.map-wrap {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 1.5px solid var(--grey-200);
-  height: 380px;
-}
-
+.map-wrap { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 1.5px solid var(--grey-200); height: 380px; }
 .map-wrap iframe { width: 100%; height: 100%; border: none; }
 
-/* ═══════════════════════════════════════════
-   POPUP – CALL NOW
-═══════════════════════════════════════════ */
-.popup-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(26,26,46,0.45);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  backdrop-filter: blur(6px);
-  padding: 20px;
-}
-
-.popup-backdrop.open {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.popup-box {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 40px 36px;
-  width: 100%;
-  max-width: 430px;
-  box-shadow: 0 32px 80px rgba(26,26,46,0.2);
-  transform: scale(0.92) translateY(16px);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-}
-
-.popup-backdrop.open .popup-box {
-  transform: scale(1) translateY(0);
-}
-
-.popup-close-btn {
-  position: absolute;
-  top: 16px; right: 16px;
-  width: 34px; height: 34px;
-  background: var(--grey-100);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  color: var(--grey-700);
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
-}
-
+/* POPUP */
+.popup-backdrop { position: fixed; inset: 0; background: rgba(26,26,46,0.45); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(6px); padding: 20px; }
+.popup-backdrop.open { opacity: 1; pointer-events: all; }
+.popup-box { background: var(--white); border-radius: var(--radius-lg); padding: 40px 36px; width: 100%; max-width: 430px; box-shadow: 0 32px 80px rgba(26,26,46,0.2); transform: scale(0.92) translateY(16px); transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.popup-backdrop.open .popup-box { transform: scale(1) translateY(0); }
+.popup-close-btn { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; background: var(--grey-100); border: none; border-radius: 50%; cursor: pointer; font-size: 16px; color: var(--grey-700); display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
 .popup-close-btn:hover { background: #ffeaea; color: #c0392b; }
-
-.popup-top-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--yellow-light);
-  border: 1px solid rgba(244,180,0,0.4);
-  border-radius: 50px;
-  padding: 5px 14px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #8a6c00;
-  margin-bottom: 16px;
-}
-
-.popup-company-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-
-.popup-proprietor {
-  font-size: 13px;
-  color: var(--grey-500);
-  margin-bottom: 28px;
-  line-height: 1.6;
-}
-
+.popup-top-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--yellow-light); border: 1px solid rgba(244,180,0,0.4); border-radius: 50px; padding: 5px 14px; font-size: 11px; font-weight: 700; color: #8a6c00; margin-bottom: 16px; }
+.popup-company-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.popup-proprietor { font-size: 13px; color: var(--grey-500); margin-bottom: 28px; line-height: 1.6; }
 .popup-proprietor strong { color: var(--yellow-dark); }
-
 .popup-numbers { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
-
-.popup-number {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--off-white);
-  border: 1.5px solid var(--grey-200);
-  border-radius: var(--radius-sm);
-  padding: 16px 18px;
-  text-decoration: none;
-  transition: all 0.25s;
-}
-
-.popup-number:hover {
-  background: var(--yellow-pale);
-  border-color: rgba(244,180,0,0.5);
-  transform: translateX(4px);
-}
-
-.pn-icon-wrap {
-  width: 40px; height: 40px;
-  background: var(--yellow);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(244,180,0,0.3);
-}
-
+.popup-number { display: flex; align-items: center; gap: 14px; background: var(--off-white); border: 1.5px solid var(--grey-200); border-radius: var(--radius-sm); padding: 16px 18px; text-decoration: none; transition: all 0.25s; }
+.popup-number:hover { background: var(--yellow-pale); border-color: rgba(244,180,0,0.5); transform: translateX(4px); }
+.pn-icon-wrap { width: 40px; height: 40px; background: var(--yellow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(244,180,0,0.3); }
 .pn-strong { display: block; font-size: 20px; font-weight: 800; color: var(--text); line-height: 1.1; }
 .pn-sub { font-size: 11px; color: var(--grey-500); font-weight: 500; }
-
-.popup-wa {
-  width: 100%;
-  background: #25D366;
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 14px 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: all 0.2s;
-  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
-}
-
+.popup-wa { width: 100%; background: #25D366; color: #fff; border: none; border-radius: var(--radius-sm); padding: 14px 20px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
 .popup-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
 
-/* ═══════════════════════════════════════════
-   LIGHTBOX
-═══════════════════════════════════════════ */
-.lightbox-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  z-index: 9998;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
+/* LIGHTBOX */
+.lightbox-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 9998; display: none; align-items: center; justify-content: center; padding: 20px; }
 .lightbox-backdrop.open { display: flex; }
-
-.lightbox-img {
-  max-width: 90vw;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px; right: 24px;
-  background: rgba(255,255,255,0.15);
-  border: none;
-  border-radius: 50%;
-  width: 44px; height: 44px;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s;
-}
-
+.lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: var(--radius-sm); box-shadow: 0 32px 80px rgba(0,0,0,0.5); }
+.lightbox-close { position: absolute; top: 20px; right: 24px; background: rgba(255,255,255,0.15); border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 20px; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
 .lightbox-close:hover { background: rgba(244,180,0,0.6); }
 
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
-footer {
-  background: var(--text);
-  color: rgba(255,255,255,0.85);
-  padding: 72px 32px 0;
-}
-
-.footer-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 56px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer-brand-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
+/* FOOTER */
+footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 72px 32px 0; }
+.footer-inner { max-width: 1280px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 4px; }
 .footer-brand-name span { color: var(--yellow); }
 .footer-brand-tag { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
 .footer-about-text { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 20px; }
-
 .footer-social { display: flex; gap: 10px; }
-.social-circle {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
+.social-circle { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 15px; text-decoration: none; transition: all 0.2s; }
 .social-circle:hover { background: var(--yellow); border-color: var(--yellow); }
-
-.footer-col h5 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--yellow);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
-}
-
+.footer-col h5 { font-size: 13px; font-weight: 700; color: var(--yellow); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 10px; }
-.footer-col ul li a {
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+.footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
 .footer-col ul li a::before { content: '›'; color: var(--yellow); font-size: 16px; }
 .footer-col ul li a:hover { color: #fff; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 12px; color: rgba(255,255,255,0.35); }
 
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  font-size: 12px;
-  color: rgba(255,255,255,0.35);
-}
-
-/* ═══════════════════════════════════════════
-   FLOATING STICKY BUTTONS
-═══════════════════════════════════════════ */
-.floating-stack {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 998;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.float-fab {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  text-decoration: none;
-}
-
+/* FLOATING */
+.floating-stack { position: fixed; bottom: 28px; right: 28px; z-index: 998; display: flex; flex-direction: column; gap: 12px; }
+.float-fab { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; border: none; cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,0.2); transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); text-decoration: none; }
 .float-fab:hover { transform: scale(1.15); }
 .fab-call { background: var(--yellow); color: #fff; }
 .fab-wa { background: #25D366; color: #fff; }
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .hero-inner { gap: 48px; }
-  .about-grid { gap: 48px; }
+  .hero-inner { gap: 40px; }
+  .about-grid { gap: 40px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .qi-form-row { grid-template-columns: 1fr 1fr; }
+  .qi-grid { grid-template-columns: 1fr; gap: 24px; }
 }
-
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-inner { padding: 0 20px; }
-
-  .hero-inner { grid-template-columns: 1fr; padding: 60px 20px; }
-  .hero-visual { height: 340px; }
+  .hero-inner { grid-template-columns: 1fr; padding: 50px 20px; }
+  .hero-visual { height: 300px; order: -1; }
   .hero-card-1 { width: 54%; height: 60%; }
   .hero-card-2 { width: 42%; height: 48%; }
   .hero-card-3 { width: 46%; height: 38%; }
   .hero-card-4 { width: 40%; height: 44%; }
-
   .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
   .stat-card { border-right: none; border-bottom: 1px solid var(--grey-200); }
-
-  .section { padding: 64px 20px; }
+  .section { padding: 56px 20px; }
   .about-grid { grid-template-columns: 1fr; }
-  .about-images { height: 300px; margin-bottom: 24px; }
+  .about-images { height: 280px; margin-bottom: 20px; }
   .services-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-item:nth-child(1), .gallery-item:nth-child(7) { grid-column: span 2; }
@@ -1556,16 +749,21 @@ footer {
   .blog-grid { grid-template-columns: 1fr; }
   .quote-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .about-features { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
+  .qi-form-row { grid-template-columns: 1fr; }
+  .quick-inquiry { padding: 0 20px; }
+  .review-form-grid { grid-template-columns: 1fr; }
+  .write-review-box { padding: 24px 20px; }
+  .testi-header-row { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
 <body>
 
-<!-- ═══ NAVIGATION ═══ -->
+<!-- NAV -->
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
     <a href="#home" class="nav-logo">
@@ -1575,7 +773,6 @@ footer {
         <div class="nav-logo-sub">Panvel & Navi Mumbai · Since 1999</div>
       </div>
     </a>
-
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -1583,23 +780,20 @@ footer {
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
     <div class="nav-actions">
-      <a href="https://wa.me/919702" target="_blank" class="btn btn-outline btn-sm">💬 WhatsApp</a>
+      <a href="https://wa.me/919702915955" target="_blank" class="btn btn-outline btn-sm">💬 WhatsApp</a>
       <button class="btn btn-primary btn-sm" onclick="openPopup()">📞 Call Now</button>
     </div>
-
     <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
   <div class="hero-inner">
-    <!-- Left -->
     <div>
       <div class="hero-eyebrow">
         <span class="hero-eyebrow-dot"></span>
@@ -1616,21 +810,13 @@ footer {
         <a href="https://wa.me/919702915955?text=Hello%2C%20I%20need%20a%20free%20quote" target="_blank" class="btn btn-outline btn-lg">💬 WhatsApp Us</a>
       </div>
       <div class="hero-trust">
-        <div class="hero-trust-item">
-          <span class="check">✓</span> CIDCO Registered
-        </div>
+        <div class="hero-trust-item"><span class="check">✓</span> CIDCO Registered</div>
         <div class="hero-trust-divider"></div>
-        <div class="hero-trust-item">
-          <span class="check">✓</span> PWD Approved
-        </div>
+        <div class="hero-trust-item"><span class="check">✓</span> PWD Approved</div>
         <div class="hero-trust-divider"></div>
-        <div class="hero-trust-item">
-          <span class="check">✓</span> 500+ Happy Clients
-        </div>
+        <div class="hero-trust-item"><span class="check">✓</span> 100+ Happy Clients</div>
       </div>
     </div>
-
-    <!-- Right – image collage -->
     <div class="hero-visual">
       <div class="hero-float-badge hero-float-badge-1">
         <span class="hero-float-icon">⭐</span>
@@ -1639,20 +825,18 @@ footer {
           <span>Client Rating</span>
         </div>
       </div>
-
       <div class="hero-card hero-card-1">
-        <img src="civil-plastering-work-500x500.jpg" alt="Plastering Work Navi Mumbai" onerror="this.parentElement.style.background='linear-gradient(135deg,#f4e8c0,#e8d5a0)'">
+        <img src="civil-plastering-work-500x500.jpg" alt="Plastering Work Navi Mumbai" onerror="this.style.display='none'">
       </div>
       <div class="hero-card hero-card-2">
-        <img src="image.jpeg" alt="Tile Work Panvel" onerror="this.parentElement.style.background='linear-gradient(135deg,#d0e8d0,#b8d8b8)'">
+        <img src="image.jpeg" alt="Tile Work Panvel" onerror="this.style.display='none'">
       </div>
       <div class="hero-card hero-card-3">
-        <img src="roof-waterproofing-services.jpeg" alt="Waterproofing Navi Mumbai" onerror="this.parentElement.style.background='linear-gradient(135deg,#c8dce8,#a8c8e0)'">
+        <img src="roof-waterproofing-services.jpeg" alt="Waterproofing Navi Mumbai" onerror="this.style.display='none'">
       </div>
       <div class="hero-card hero-card-4">
-        <img src="building-roofing-shed-500x500.jpg" alt="Fabrication Panvel" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8d0d0,#d8b8b8)'">
+        <img src="building-roofing-shed-500x500.jpg" alt="Fabrication Panvel" onerror="this.style.display='none'">
       </div>
-
       <div class="hero-float-badge hero-float-badge-2">
         <span class="hero-float-icon">🏆</span>
         <div class="hero-float-text">
@@ -1664,7 +848,52 @@ footer {
   </div>
 </section>
 
-<!-- ═══ STATS BAR ═══ -->
+<!-- QUICK INQUIRY FORM (above fold, below hero) -->
+<div class="quick-inquiry" id="quick-inquiry">
+  <div class="quick-inquiry-inner">
+    <div class="qi-grid">
+      <div class="qi-left">
+        <div class="qi-tagline">Get a <span>Free Quote</span><br>in 2 Hours!</div>
+        <div class="qi-sub">Fill the form → We call you back</div>
+      </div>
+      <div class="qi-right">
+        <form action="https://formspree.io/f/meepnbek" method="POST" id="quickInquiryForm" onsubmit="handleQuickSubmit(event)">
+          <div class="qi-form-row">
+            <div class="qi-field">
+              <label>Your Name *</label>
+              <input type="text" name="name" placeholder="Rahul Sharma" required>
+            </div>
+            <div class="qi-field">
+              <label>Phone Number *</label>
+              <input type="tel" name="phone" placeholder="9820000000" required>
+            </div>
+            <div class="qi-field">
+              <label>Service Needed *</label>
+              <select name="service" required>
+                <option value="">Select service...</option>
+                <option>Plastering Work</option>
+                <option>Flooring & Tiles</option>
+                <option>Waterproofing</option>
+                <option>Fabrication Work</option>
+                <option>Painting Services</option>
+                <option>Structural / RCC Work</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div>
+              <button type="submit" class="qi-submit-btn">Submit →</button>
+            </div>
+          </div>
+          <input type="hidden" name="_subject" value="New Inquiry from Website">
+          <input type="hidden" name="_replyto" value="pranjalcivilconstruction@gmail.com">
+        </form>
+        <div class="qi-success" id="qiSuccess">✅ Thank you! We'll contact you within 2 hours.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-bar-inner">
     <div class="stat-card reveal">
@@ -1673,14 +902,14 @@ footer {
       <div class="stat-label">Years Experience</div>
     </div>
     <div class="stat-card reveal delay-1">
-      <span class="stat-icon">🏠</span>
-      <div class="stat-number"><span class="counter" data-target="500">0</span><span class="accent">+</span></div>
-      <div class="stat-label">Projects Completed</div>
+      <span class="stat-icon">😊</span>
+      <div class="stat-number"><span class="counter" data-target="100">0</span><span class="accent">+</span></div>
+      <div class="stat-label">Happy Clients</div>
     </div>
     <div class="stat-card reveal delay-2">
-      <span class="stat-icon">😊</span>
-      <div class="stat-number"><span class="counter" data-target="98">0</span><span class="accent">%</span></div>
-      <div class="stat-label">Client Satisfaction</div>
+      <span class="stat-icon">✅</span>
+      <div class="stat-number"><span class="counter" data-target="100">0</span><span class="accent">%</span></div>
+      <div class="stat-label">Quality Guaranteed</div>
     </div>
     <div class="stat-card reveal delay-3">
       <span class="stat-icon">📍</span>
@@ -1690,68 +919,50 @@ footer {
   </div>
 </div>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ABOUT -->
 <section class="section about" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <!-- Images -->
       <div class="about-images reveal-left">
         <div class="about-img-main">
-          <img src="sddefault.jpg" alt="Civil construction work Panvel" onerror="this.parentElement.style.background='linear-gradient(135deg,#f0e6c0,#d8c890)'">
+          <img src="sddefault.jpg" alt="Civil construction work Panvel" onerror="this.style.display='none'">
         </div>
         <div class="about-img-secondary">
-          <img src="hq720__3_.jpg" alt="Plastering work Navi Mumbai" onerror="this.parentElement.style.background='linear-gradient(135deg,#c0d8f0,#a0c0e0)'">
+          <img src="hq720__3_.jpg" alt="Plastering work Navi Mumbai" onerror="this.style.display='none'">
         </div>
         <div class="about-years-badge">
           <span class="num">25+</span>
           <span class="label">Years of Trust</span>
         </div>
       </div>
-
-      <!-- Content -->
       <div class="about-content reveal-right">
         <p class="section-eyebrow">About Us</p>
         <h2 class="about-title">Navi Mumbai's Most <span>Trusted</span> Civil Contractor</h2>
         <p class="about-desc">Pranjal Civil Construction is a Govt.-registered civil contracting firm led by <strong>Proprietor Mr. Kamraj Jambhale</strong>, operating from New Panvel, Navi Mumbai. For over 25 years, we have delivered precision construction services — from humble repairs to complete building projects.</p>
         <p class="about-desc">Our CIDCO & PWD-approved status, combined with decades of hands-on experience, makes us the go-to contractor for homeowners, builders, and societies across Navi Mumbai.</p>
-
         <div class="about-features">
           <div class="about-feat">
             <div class="about-feat-icon">🏛️</div>
-            <div class="about-feat-text">
-              <strong>Govt. Registered</strong>
-              <span>CIDCO & PWD Approved</span>
-            </div>
+            <div class="about-feat-text"><strong>Govt. Registered</strong><span>CIDCO & PWD Approved</span></div>
           </div>
           <div class="about-feat">
             <div class="about-feat-icon">⏱️</div>
-            <div class="about-feat-text">
-              <strong>On-Time Delivery</strong>
-              <span>Deadline-driven project execution</span>
-            </div>
+            <div class="about-feat-text"><strong>On-Time Delivery</strong><span>Deadline-driven execution</span></div>
           </div>
           <div class="about-feat">
             <div class="about-feat-icon">🔩</div>
-            <div class="about-feat-text">
-              <strong>Premium Materials</strong>
-              <span>Branded products only</span>
-            </div>
+            <div class="about-feat-text"><strong>Premium Materials</strong><span>Branded products only</span></div>
           </div>
           <div class="about-feat">
             <div class="about-feat-icon">💰</div>
-            <div class="about-feat-text">
-              <strong>Transparent Pricing</strong>
-              <span>Free quotes, no hidden charges</span>
-            </div>
+            <div class="about-feat-text"><strong>Transparent Pricing</strong><span>Free quotes, no hidden charges</span></div>
           </div>
         </div>
-
         <div class="cert-row">
           <span class="cert-pill">✅ CIDCO Registered</span>
           <span class="cert-pill">✅ PWD Approved</span>
           <span class="cert-pill">✅ 25 Years Licensed</span>
         </div>
-
         <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
           <button class="btn btn-primary btn-md" onclick="openPopup()">📞 Call Mr. Kamraj</button>
           <a href="#services" class="btn btn-ghost btn-md">View Services <span class="arrow">→</span></a>
@@ -1761,7 +972,7 @@ footer {
   </div>
 </section>
 
-<!-- ═══ SERVICES ═══ -->
+<!-- SERVICES -->
 <section class="section services tex-grid" id="services">
   <div class="section-inner">
     <div class="section-header">
@@ -1769,7 +980,6 @@ footer {
       <h2 class="section-title">Our <span>Services</span></h2>
       <p class="section-desc">Comprehensive civil construction solutions across Panvel & Navi Mumbai — every job delivered with skill, precision, and care.</p>
     </div>
-
     <div class="services-grid">
       <div class="svc-card reveal">
         <div class="svc-icon-wrap">🧱</div>
@@ -1781,9 +991,7 @@ footer {
           <li>Texture & Decorative Finish</li>
           <li>Façade & Repair Plastering</li>
         </ul>
-        <button class="btn btn-ghost" onclick="openPopup()">Get Free Quote <span class="arrow">→</span></button>
       </div>
-
       <div class="svc-card reveal delay-1">
         <div class="svc-icon-wrap">🪵</div>
         <div class="svc-name">Tiles & Flooring</div>
@@ -1794,9 +1002,7 @@ footer {
           <li>Mosaic & Decorative Patterns</li>
           <li>Old Tile Removal & Re-fixing</li>
         </ul>
-        <button class="btn btn-ghost" onclick="openPopup()">Get Free Quote <span class="arrow">→</span></button>
       </div>
-
       <div class="svc-card reveal delay-2">
         <div class="svc-icon-wrap">💧</div>
         <div class="svc-name">Waterproofing</div>
@@ -1807,9 +1013,7 @@ footer {
           <li>Crystalline & Membrane Treatment</li>
           <li>Water Tank Waterproofing</li>
         </ul>
-        <button class="btn btn-ghost" onclick="openPopup()">Get Free Quote <span class="arrow">→</span></button>
       </div>
-
       <div class="svc-card reveal delay-3">
         <div class="svc-icon-wrap">🔧</div>
         <div class="svc-name">Fabrication Work</div>
@@ -1820,9 +1024,7 @@ footer {
           <li>Staircase & Railing Work</li>
           <li>Gates, Grilles & Fencing</li>
         </ul>
-        <button class="btn btn-ghost" onclick="openPopup()">Get Free Quote <span class="arrow">→</span></button>
       </div>
-
       <div class="svc-card reveal delay-4">
         <div class="svc-icon-wrap">🎨</div>
         <div class="svc-name">Painting Services</div>
@@ -1833,9 +1035,7 @@ footer {
           <li>Waterproofing Paint</li>
           <li>Commercial & Industrial</li>
         </ul>
-        <button class="btn btn-ghost" onclick="openPopup()">Get Free Quote <span class="arrow">→</span></button>
       </div>
-
       <div class="svc-card reveal delay-5">
         <div class="svc-icon-wrap">🏗️</div>
         <div class="svc-name">Structural Work</div>
@@ -1846,13 +1046,12 @@ footer {
           <li>Brick Masonry & Block Work</li>
           <li>Building Renovation</li>
         </ul>
-        <button class="btn btn-ghost" onclick="openPopup()">Get Free Quote <span class="arrow">→</span></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ GALLERY ═══ -->
+<!-- GALLERY -->
 <section class="section gallery" id="gallery">
   <div class="section-inner">
     <div class="section-header reveal">
@@ -1860,7 +1059,6 @@ footer {
       <h2 class="section-title">Project <span>Gallery</span></h2>
       <p class="section-desc">Real projects, real craftsmanship — see our work across Panvel & Navi Mumbai.</p>
     </div>
-
     <div class="gallery-filter reveal">
       <button class="filter-btn active" onclick="filterGallery('all',this)">All</button>
       <button class="filter-btn" onclick="filterGallery('plastering',this)">Plastering</button>
@@ -1869,154 +1067,211 @@ footer {
       <button class="filter-btn" onclick="filterGallery('fabrication',this)">Fabrication</button>
       <button class="filter-btn" onclick="filterGallery('painting',this)">Painting</button>
     </div>
-
     <div class="gallery-grid" id="galleryGrid">
       <div class="gallery-item reveal" data-cat="painting" onclick="openLightbox(this)">
-        <img src="maxresdefault__8_.jpg" alt="Decorative Wall Painting Panvel">
+        <img src="maxresdefault__8_.jpg" alt="Decorative Wall Painting Panvel" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Painting</span></div>
       </div>
       <div class="gallery-item reveal delay-1" data-cat="painting" onclick="openLightbox(this)">
-        <img src="images__2_.jpeg" alt="Texture Painting Navi Mumbai">
+        <img src="images__2_.jpeg" alt="Texture Painting Navi Mumbai" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Painting</span></div>
       </div>
       <div class="gallery-item reveal delay-2" data-cat="tiles" onclick="openLightbox(this)">
-        <img src="hq720__7_.jpg" alt="Tile Work Panvel">
+        <img src="hq720__7_.jpg" alt="Tile Work Panvel" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Tiles</span></div>
       </div>
       <div class="gallery-item reveal delay-3" data-cat="plastering" onclick="openLightbox(this)">
-        <img src="maxresdefault__6_.jpg" alt="Exterior Plastering Navi Mumbai">
+        <img src="maxresdefault__6_.jpg" alt="Exterior Plastering Navi Mumbai" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Plastering</span></div>
       </div>
       <div class="gallery-item reveal delay-1" data-cat="plastering" onclick="openLightbox(this)">
-        <img src="sddefault.jpg" alt="Plastering Work Panvel">
+        <img src="sddefault.jpg" alt="Plastering Work Panvel" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Plastering</span></div>
       </div>
       <div class="gallery-item reveal delay-2" data-cat="plastering" onclick="openLightbox(this)">
-        <img src="hq720__3_.jpg" alt="Plaster Work In Progress">
+        <img src="hq720__3_.jpg" alt="Plaster Work In Progress" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Plastering</span></div>
       </div>
       <div class="gallery-item reveal delay-3" data-cat="plastering" onclick="openLightbox(this)">
-        <img src="civil-plastering-work-500x500.jpg" alt="Civil Plastering">
+        <img src="civil-plastering-work-500x500.jpg" alt="Civil Plastering" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Plastering</span></div>
       </div>
       <div class="gallery-item reveal" data-cat="tiles" onclick="openLightbox(this)">
-        <img src="images__1_.jpeg" alt="Floor Tiling Panvel">
+        <img src="images__1_.jpeg" alt="Floor Tiling Panvel" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Tiles</span></div>
       </div>
       <div class="gallery-item reveal delay-1" data-cat="tiles" onclick="openLightbox(this)">
-        <img src="image.jpeg" alt="Bathroom Tiles Navi Mumbai">
+        <img src="image.jpeg" alt="Bathroom Tiles Navi Mumbai" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Tiles</span></div>
       </div>
       <div class="gallery-item reveal delay-2" data-cat="waterproofing" onclick="openLightbox(this)">
-        <img src="roof-waterproofing-services.jpeg" alt="Roof Waterproofing Navi Mumbai">
+        <img src="roof-waterproofing-services.jpeg" alt="Roof Waterproofing Navi Mumbai" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Waterproofing</span></div>
       </div>
       <div class="gallery-item reveal delay-3" data-cat="fabrication" onclick="openLightbox(this)">
-        <img src="building-roofing-shed-500x500.jpg" alt="Roofing Shed Fabrication">
+        <img src="building-roofing-shed-500x500.jpg" alt="Roofing Shed Fabrication" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Fabrication</span></div>
       </div>
       <div class="gallery-item reveal delay-4" data-cat="fabrication" onclick="openLightbox(this)">
-        <img src="upvc-roofing-sheet.jpg" alt="UPVC Roofing">
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Fabrication</span></div>
-      </div>
-      <div class="gallery-item reveal" data-cat="fabrication" onclick="openLightbox(this)">
-        <img src="product-jpeg.jpg" alt="Fabrication Navi Mumbai">
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Fabrication</span></div>
-      </div>
-      <div class="gallery-item reveal delay-1" data-cat="fabrication" onclick="openLightbox(this)">
-        <img src="hq720__1_.jpg" alt="Roofing Installation">
+        <img src="upvc-roofing-sheet.jpg" alt="UPVC Roofing" onerror="this.style.display='none'">
         <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span><span class="gallery-overlay-text">Fabrication</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
+<!-- TESTIMONIALS -->
 <section class="section testimonials" id="testimonials">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-eyebrow">Client Reviews</p>
-      <h2 class="section-title">What Our <span>Clients Say</span></h2>
-      <p class="section-desc">500+ happy clients across Navi Mumbai trust us for quality construction work.</p>
+      <div class="testi-header-row">
+        <div>
+          <p class="section-eyebrow" style="justify-content:flex-start; margin-bottom:12px;">Client Reviews</p>
+          <h2 class="section-title" style="text-align:left; margin-bottom:0;">What Our <span>Clients Say</span></h2>
+        </div>
+        <a href="#write-review" class="btn btn-outline btn-md" style="flex-shrink:0;">✍️ Write a Review</a>
+      </div>
     </div>
 
-    <div class="testi-grid">
+    <div class="testi-grid" id="testiGrid">
+      <!-- Review 1 -->
       <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars-wrap">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-rating-num">5.0</span>
+        </div>
         <p class="testi-text">Outstanding painting work! The texture on our living room wall is absolutely beautiful. Clean edges, no dripping, very professional team. Highly recommend to anyone in Panvel.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">MP</div>
-          <div>
-            <div class="testi-name">Manali Pawar</div>
-            <div class="testi-loc">📍 New Panvel</div>
+        <div class="testi-footer">
+          <div class="testi-author">
+            <div class="testi-avatar">MP</div>
+            <div>
+              <div class="testi-name">Manali Pawar</div>
+              <div class="testi-loc">📍 New Panvel</div>
+            </div>
           </div>
+          <div class="testi-date">March 2026</div>
         </div>
       </div>
-
+      <!-- Review 2 -->
       <div class="testi-card reveal delay-1">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Complete tile flooring in our new flat — done in 5 days as promised. Alignment is perfect, grouting is flawless. Mr. Kamraj is always reachable. Very reliable team.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">RK</div>
-          <div>
-            <div class="testi-name">Rohit Kamble</div>
-            <div class="testi-loc">📍 Kamothe</div>
+        <div class="testi-stars-wrap">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-rating-num">4.8</span>
+        </div>
+        <p class="testi-text">काम बहुत अच्छा किया! टाइल्स का काम 5 दिनों में पूरा हुआ जैसा बताया था। Alignment perfect है, grouting बिल्कुल सही है। Mr. Kamraj हमेशा contact में रहे।</p>
+        <div class="testi-footer">
+          <div class="testi-author">
+            <div class="testi-avatar">RK</div>
+            <div>
+              <div class="testi-name">Rohit Kamble</div>
+              <div class="testi-loc">📍 Kamothe</div>
+            </div>
           </div>
+          <div class="testi-date">Feb 2026</div>
         </div>
       </div>
-
+      <!-- Review 3 -->
       <div class="testi-card reveal delay-2">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars-wrap">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-rating-num">5.0</span>
+        </div>
         <p class="testi-text">Had severe roof leakage for 3 years. Pranjal Civil solved it permanently in 2 days. Two monsoons later — zero leakage. Worth every rupee. Excellent waterproofing work!</p>
-        <div class="testi-author">
-          <div class="testi-avatar">SP</div>
-          <div>
-            <div class="testi-name">Sanjay Patil</div>
-            <div class="testi-loc">📍 Kharghar</div>
+        <div class="testi-footer">
+          <div class="testi-author">
+            <div class="testi-avatar">SP</div>
+            <div>
+              <div class="testi-name">Sanjay Patil</div>
+              <div class="testi-loc">📍 Kharghar</div>
+            </div>
           </div>
+          <div class="testi-date">Jan 2026</div>
         </div>
       </div>
-
+      <!-- Review 4 -->
+      <div class="testi-card reveal">
+        <div class="testi-stars-wrap">
+          <span class="testi-stars">★★★★<span style="color:var(--grey-300)">★</span></span>
+          <span class="testi-rating-num">4.5</span>
+        </div>
+        <p class="testi-text">समय पर काम पूरा किया और quality बहुत अच्छी थी। RCC work और brickwork दोनों top class। Mr. Kamraj ने personally supervise किया। Already 3 neighbors को refer किया।</p>
+        <div class="testi-footer">
+          <div class="testi-author">
+            <div class="testi-avatar">AM</div>
+            <div>
+              <div class="testi-name">Amit Mhatre</div>
+              <div class="testi-loc">📍 Panvel</div>
+            </div>
+          </div>
+          <div class="testi-date">Dec 2025</div>
+        </div>
+      </div>
+      <!-- Review 5 -->
       <div class="testi-card reveal delay-1">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Building extension with RCC work and brickwork — top quality throughout. Mr. Kamraj personally supervised every critical stage. Already referred them to 3 neighbors.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">AM</div>
-          <div>
-            <div class="testi-name">Amit Mhatre</div>
-            <div class="testi-loc">📍 Panvel</div>
+        <div class="testi-stars-wrap">
+          <span class="testi-stars">★★★★<span style="color:var(--grey-300)">★</span></span>
+          <span class="testi-rating-num">4.3</span>
+        </div>
+        <p class="testi-text">Large metal fabrication shed on our terrace — solid welding, perfectly done. 18 months and no issues even in heavy monsoon. Good quality fabrication at a fair price.</p>
+        <div class="testi-footer">
+          <div class="testi-author">
+            <div class="testi-avatar">VK</div>
+            <div>
+              <div class="testi-name">Vikas Kumbhar</div>
+              <div class="testi-loc">📍 Khanda Colony</div>
+            </div>
           </div>
+          <div class="testi-date">Nov 2025</div>
         </div>
       </div>
-
+      <!-- Review 6 -->
       <div class="testi-card reveal delay-2">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Large metal fabrication shed on our terrace — solid welding, perfectly done. 18 months and no issues even in heavy monsoon. Great quality fabrication at fair price.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">VK</div>
-          <div>
-            <div class="testi-name">Vikas Kumbhar</div>
-            <div class="testi-loc">📍 Khanda Colony</div>
+        <div class="testi-stars-wrap">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-rating-num">4.9</span>
+        </div>
+        <p class="testi-text">Extremely professional. On time every day, cleaned up after work, completed ahead of schedule. This is my second project with Pranjal Civil — will definitely come back again.</p>
+        <div class="testi-footer">
+          <div class="testi-author">
+            <div class="testi-avatar">RT</div>
+            <div>
+              <div class="testi-name">Rahul Tripathi</div>
+              <div class="testi-loc">📍 Belapur</div>
+            </div>
           </div>
+          <div class="testi-date">Oct 2025</div>
         </div>
       </div>
+    </div>
 
-      <div class="testi-card reveal delay-3">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Extremely professional. On time every day, cleaned up after work, completed ahead of schedule. This is my second project with Pranjal Civil — will keep coming back.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">RT</div>
-          <div>
-            <div class="testi-name">Rahul Tripathi</div>
-            <div class="testi-loc">📍 Belapur</div>
-          </div>
+    <!-- Dynamic reviews from localStorage -->
+    <div id="dynamicReviews"></div>
+
+    <!-- Write a Review Box -->
+    <div class="write-review-box reveal" id="write-review">
+      <div class="write-review-title">✍️ Share Your Experience</div>
+      <div class="review-form-grid">
+        <input class="rv-input" id="rvName" type="text" placeholder="Your Name *" required>
+        <input class="rv-input" id="rvLocation" type="text" placeholder="Your Area (e.g. Panvel)">
+      </div>
+      <div style="margin-bottom:12px;">
+        <div style="font-size:12px;font-weight:700;color:var(--grey-700);margin-bottom:6px;">Your Rating *</div>
+        <div class="star-picker" id="starPicker">
+          <span class="star-pick" data-val="1" onclick="setRating(1)">★</span>
+          <span class="star-pick" data-val="2" onclick="setRating(2)">★</span>
+          <span class="star-pick" data-val="3" onclick="setRating(3)">★</span>
+          <span class="star-pick" data-val="4" onclick="setRating(4)">★</span>
+          <span class="star-pick" data-val="5" onclick="setRating(5)">★</span>
         </div>
       </div>
+      <textarea class="rv-textarea" id="rvMessage" rows="3" placeholder="Tell us about your experience... (English or Hindi)" required></textarea>
+      <br>
+      <button class="rv-submit" onclick="submitReview()">Submit Review</button>
     </div>
   </div>
 </section>
 
-<!-- ═══ BLOG ═══ -->
+<!-- BLOG -->
 <section class="section blog" id="blog">
   <div class="section-inner">
     <div class="section-header reveal">
@@ -2024,35 +1279,32 @@ footer {
       <h2 class="section-title">Construction <span>Knowledge</span></h2>
       <p class="section-desc">Expert tips, cost guides, and helpful articles for homeowners in Navi Mumbai.</p>
     </div>
-
     <div class="blog-grid">
       <div class="blog-card reveal">
-        <div class="blog-card-img">
-          <img src="roof-waterproofing-services.jpeg" alt="Waterproofing Guide">
+        <div class="blog-card-img blog-card-img-1">
+          <img src="roof-waterproofing-services.jpeg" alt="Waterproofing Guide" onerror="this.style.display='none'">
           <span class="blog-cat">Waterproofing</span>
         </div>
         <div class="blog-body">
           <h3 class="blog-title">How to Choose the Right Waterproofing for Your Navi Mumbai Home</h3>
-          <p class="blog-excerpt">Compare crystalline, membrane, and coating systems — and know which suits your terrace, bathroom or basement best before monsoon hits.</p>
+          <p class="blog-excerpt">Compare crystalline, membrane, and coating systems — know which suits your terrace, bathroom or basement best before monsoon hits.</p>
           <div class="blog-meta">🕒 5 min read · April 2025</div>
         </div>
       </div>
-
       <div class="blog-card reveal delay-1">
-        <div class="blog-card-img">
-          <img src="image.jpeg" alt="Tile Cost Guide">
+        <div class="blog-card-img blog-card-img-2">
+          <img src="image.jpeg" alt="Tile Cost Guide" onerror="this.style.display='none'">
           <span class="blog-cat">Tiles & Flooring</span>
         </div>
         <div class="blog-body">
           <h3 class="blog-title">Tile Flooring Cost in Navi Mumbai 2025 – Full Breakdown</h3>
-          <p class="blog-excerpt">Material, labour, adhesive, finishing — a transparent breakdown so you can budget your tile work in Panvel or Kharghar without any surprises.</p>
+          <p class="blog-excerpt">Material, labour, adhesive, finishing — a transparent breakdown so you can budget your tile work in Panvel or Kharghar without surprises.</p>
           <div class="blog-meta">🕒 6 min read · March 2025</div>
         </div>
       </div>
-
       <div class="blog-card reveal delay-2">
-        <div class="blog-card-img">
-          <img src="maxresdefault__8_.jpg" alt="Painting Tips">
+        <div class="blog-card-img blog-card-img-3">
+          <img src="maxresdefault__8_.jpg" alt="Painting Tips" onerror="this.style.display='none'">
           <span class="blog-cat">Painting</span>
         </div>
         <div class="blog-body">
@@ -2065,59 +1317,39 @@ footer {
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
+<!-- FAQ -->
 <section class="section faq" id="faq">
   <div class="section-inner">
     <div class="section-header reveal">
       <p class="section-eyebrow">Common Questions</p>
       <h2 class="section-title">Frequently <span>Asked</span></h2>
     </div>
-
     <div class="faq-list">
       <div class="faq-item reveal">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Are you a government-registered contractor in Navi Mumbai?
-          <span class="faq-icon">+</span>
-        </button>
+        <button class="faq-q" onclick="toggleFaq(this)">Are you a government-registered contractor in Navi Mumbai?<span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Yes. Pranjal Civil Construction is fully registered with CIDCO and PWD (Public Works Department). We provide proper receipts, invoices, and agreements for all projects. Registration details available on request.</div></div>
       </div>
-
       <div class="faq-item reveal delay-1">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What areas do you serve in Navi Mumbai?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">We serve all areas including Panvel, New Panvel, Kharghar, Kamothe, Belapur, CBD Belapur, Ulwe, Dronagiri, Airoli, Vashi, Nerul, Seawoods, Khanda Colony, Roadpali and surrounding regions. Call us to confirm your area.</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">What areas do you serve in Navi Mumbai?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We serve all areas including Panvel, New Panvel, Kharghar, Kamothe, Belapur, CBD Belapur, Ulwe, Dronagiri, Airoli, Vashi, Nerul, Seawoods, Khanda Colony, Roadpali and surrounding regions.</div></div>
       </div>
-
       <div class="faq-item reveal delay-2">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do you provide free site visits and estimates?
-          <span class="faq-icon">+</span>
-        </button>
+        <button class="faq-q" onclick="toggleFaq(this)">Do you provide free site visits and estimates?<span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Yes! We offer completely free site visits and cost estimates. Just call 9702915955 or send a WhatsApp message. We'll schedule a convenient visit and provide a detailed written quotation with zero hidden charges.</div></div>
       </div>
-
       <div class="faq-item reveal delay-3">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How long does waterproofing last and do you offer a warranty?
-          <span class="faq-icon">+</span>
-        </button>
+        <button class="faq-q" onclick="toggleFaq(this)">How long does waterproofing last and do you offer a warranty?<span class="faq-icon">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Our waterproofing treatments are designed to last 10-15 years using premium branded materials (Dr. Fixit, BASF, STP, etc.). We offer a service warranty and will address any recurrence within the warranty period.</div></div>
       </div>
-
       <div class="faq-item reveal delay-4">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do you handle small repair jobs as well as large projects?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely. Whether you need a single bathroom waterproofed, a few tiles replaced, or a complete building constructed from scratch — we take every job seriously. No minimum project size. Call us with your requirement!</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">Do you handle small repair jobs as well as large projects?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. Whether you need a single bathroom waterproofed, a few tiles replaced, or a complete building constructed from scratch — we take every job seriously. No minimum project size.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ QUOTE FORM ═══ -->
+<!-- INQUIRY FORM (Formspree) -->
 <section class="section quote-section" id="quote">
   <div class="section-inner">
     <div class="quote-grid">
@@ -2125,98 +1357,72 @@ footer {
         <p class="section-eyebrow" style="justify-content:flex-start;">Get Started</p>
         <h2 class="quote-left-title">Get Your <span>Free Quote</span> Today</h2>
         <p class="quote-left-desc">Tell us about your project and we'll provide a detailed estimate — absolutely free, no obligation. Our team typically responds within 2 hours.</p>
-
         <ul class="quote-contact-list">
-          <li>
-            <a href="tel:9702915955">
-              <div class="qc-icon">📞</div>
-              97029 15955 – Mr. Kamraj Jambhale
-            </a>
-          </li>
-          <li>
-            <a href="tel:9167165595">
-              <div class="qc-icon">📞</div>
-              91671 65595 – Alternate
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/919702915955" target="_blank">
-              <div class="qc-icon">💬</div>
-              Chat on WhatsApp
-            </a>
-          </li>
-          <li>
-            <a href="mailto:pranjalcivil@gmail.com">
-              <div class="qc-icon">✉️</div>
-              pranjalcivil@gmail.com
-            </a>
-          </li>
+          <li><a href="tel:9702915955"><div class="qc-icon">📞</div>97029 15955 – Mr. Kamraj Jambhale</a></li>
+          <li><a href="tel:9167165595"><div class="qc-icon">📞</div>91671 65595 – Alternate</a></li>
+          <li><a href="https://wa.me/919702915955" target="_blank"><div class="qc-icon">💬</div>Chat on WhatsApp</a></li>
+          <li><a href="mailto:pranjalcivilconstruction@gmail.com"><div class="qc-icon">✉️</div>pranjalcivilconstruction@gmail.com</a></li>
         </ul>
-
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey-700);">
-            <span style="color:var(--yellow-dark);">✓</span> Free site visit
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey-700);">
-            <span style="color:var(--yellow-dark);">✓</span> Detailed written estimate
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey-700);">
-            <span style="color:var(--yellow-dark);">✓</span> No hidden charges
-          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey-700);"><span style="color:var(--yellow-dark);">✓</span> Free site visit</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey-700);"><span style="color:var(--yellow-dark);">✓</span> Detailed written estimate</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey-700);"><span style="color:var(--yellow-dark);">✓</span> No hidden charges</div>
         </div>
       </div>
-
       <div class="reveal-right">
         <div class="quote-form-box">
           <div class="form-title-qf"><span class="dot"></span> Free Enquiry Form</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Your Name *</label>
-              <input type="text" id="fName" placeholder="Rahul Sharma">
+          <form action="https://formspree.io/f/meepnbek" method="POST" id="mainEnquiryForm" onsubmit="handleMainSubmit(event)">
+            <input type="hidden" name="_subject" value="New Enquiry – Pranjal Civil Construction">
+            <input type="hidden" name="_replyto" value="pranjalcivilconstruction@gmail.com">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" name="name" placeholder="Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" placeholder="9820000000" required>
+              </div>
             </div>
             <div class="form-group">
-              <label>Phone Number *</label>
-              <input type="tel" id="fPhone" placeholder="9820000000">
+              <label>Service Needed *</label>
+              <select name="service" required>
+                <option value="">Select a service...</option>
+                <option>Plastering Work</option>
+                <option>Flooring & Tiles</option>
+                <option>Waterproofing</option>
+                <option>Fabrication Work</option>
+                <option>Painting Services</option>
+                <option>Structural / RCC Work</option>
+                <option>Complete Renovation</option>
+                <option>Multiple Services</option>
+              </select>
             </div>
-          </div>
-          <div class="form-group">
-            <label>Service Needed *</label>
-            <select id="fService">
-              <option value="">Select a service...</option>
-              <option>Plastering Work</option>
-              <option>Flooring & Tiles</option>
-              <option>Waterproofing</option>
-              <option>Fabrication Work</option>
-              <option>Painting Services</option>
-              <option>Structural / RCC Work</option>
-              <option>Complete Renovation</option>
-              <option>Multiple Services</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Your Area / Location *</label>
-            <input type="text" id="fArea" placeholder="e.g. Kharghar, Sector 15">
-          </div>
-          <div class="form-group">
-            <label>Project Details</label>
-            <textarea id="fMsg" rows="3" placeholder="Briefly describe your work (optional)..."></textarea>
-          </div>
-          <button class="btn-submit-full" onclick="submitForm()">💬 Send Enquiry via WhatsApp</button>
-          <div class="success-banner" id="successBanner">✅ Thank you! We'll contact you within 2 hours.</div>
+            <div class="form-group">
+              <label>Your Area / Location *</label>
+              <input type="text" name="area" placeholder="e.g. Kharghar, Sector 15" required>
+            </div>
+            <div class="form-group">
+              <label>Project Details</label>
+              <textarea name="message" rows="3" placeholder="Briefly describe your work (optional)..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit-full">📩 Submit Enquiry</button>
+          </form>
+          <div class="success-banner" id="mainSuccessBanner">✅ Thank you! We'll contact you within 2 hours.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
+<!-- CONTACT -->
 <section class="section contact" id="contact">
   <div class="section-inner">
     <div class="section-header reveal">
       <p class="section-eyebrow">Find Us</p>
       <h2 class="section-title">Contact <span>Us</span></h2>
     </div>
-
     <div class="contact-grid">
       <div class="reveal-left">
         <div class="contact-detail-list">
@@ -2252,7 +1458,6 @@ footer {
             </div>
           </div>
         </div>
-
         <div class="timing-box">
           <h4>⏰ Working Hours</h4>
           <p>Monday – Saturday: 7:00 AM – 8:00 PM</p>
@@ -2260,21 +1465,16 @@ footer {
           <p style="margin-top:8px;color:var(--yellow-dark);font-weight:600;font-size:13px;">Available for urgent calls 7 days a week</p>
         </div>
       </div>
-
       <div class="reveal-right">
         <div class="map-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.0!2d73.1101!3d18.9953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU5JzQzLjEiTiA3M8KwMDYnMzYuNCJF!5e0!3m2!1sen!2sin!4v1680000000"
-            allowfullscreen loading="lazy"
-            title="Pranjal Civil Construction Location – New Panvel, Navi Mumbai">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.0!2d73.1101!3d18.9953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU5JzQzLjEiTiA3M8KwMDYnMzYuNCJF!5e0!3m2!1sen!2sin!4v1680000000" allowfullscreen loading="lazy" title="Pranjal Civil Construction – New Panvel, Navi Mumbai"></iframe>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
@@ -2285,11 +1485,10 @@ footer {
         <div class="footer-social">
           <a href="https://wa.me/919702915955" class="social-circle" title="WhatsApp">💬</a>
           <a href="tel:9702915955" class="social-circle" title="Call">📞</a>
-          <a href="#" class="social-circle" title="Facebook" style="color:#fff;">f</a>
+          <a href="#" class="social-circle" title="Facebook" style="color:#fff;font-weight:700;font-size:13px;">f</a>
           <a href="#" class="social-circle" title="Instagram" style="color:#fff;">📷</a>
         </div>
       </div>
-
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
@@ -2301,7 +1500,6 @@ footer {
           <li><a href="#services">Structural Work</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h5>Quick Links</h5>
         <ul>
@@ -2313,7 +1511,6 @@ footer {
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h5>Service Areas</h5>
         <ul>
@@ -2326,7 +1523,6 @@ footer {
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>© 2025 Pranjal Civil Construction. All rights reserved. | New Panvel, Navi Mumbai – 410206</span>
       <span>Civil Contractor Panvel | Waterproofing Navi Mumbai | Tiles Contractor Near Me</span>
@@ -2334,115 +1530,87 @@ footer {
   </div>
 </footer>
 
-<!-- ═══ POPUP – CALL NOW ═══ -->
+<!-- POPUP -->
 <div class="popup-backdrop" id="callPopup" onclick="closePopupOverlay(event)">
   <div class="popup-box">
     <button class="popup-close-btn" onclick="closePopup()">✕</button>
     <div class="popup-top-tag">📞 Contact Us Directly</div>
     <div class="popup-company-name">Pranjal Civil Construction</div>
-    <div class="popup-proprietor">
-      Proprietor: <strong>Mr. Kamraj Jambhale</strong><br>
-      Govt. Registered · CIDCO & PWD · New Panvel, Navi Mumbai
-    </div>
-
+    <div class="popup-proprietor">Proprietor: <strong>Mr. Kamraj Jambhale</strong><br>Govt. Registered · CIDCO & PWD · New Panvel, Navi Mumbai</div>
     <div class="popup-numbers">
       <a href="tel:9702915955" class="popup-number">
         <div class="pn-icon-wrap">📞</div>
-        <div>
-          <span class="pn-strong">97029 15955</span>
-          <span class="pn-sub">Primary – Mr. Kamraj Jambhale</span>
-        </div>
+        <div><span class="pn-strong">97029 15955</span><span class="pn-sub">Primary – Mr. Kamraj Jambhale</span></div>
       </a>
       <a href="tel:9167165595" class="popup-number">
         <div class="pn-icon-wrap">📞</div>
-        <div>
-          <span class="pn-strong">91671 65595</span>
-          <span class="pn-sub">Alternate Number</span>
-        </div>
+        <div><span class="pn-strong">91671 65595</span><span class="pn-sub">Alternate Number</span></div>
       </a>
     </div>
-
-    <a href="https://wa.me/919702915955?text=Hello%2C%20I%20need%20a%20free%20quote%20for%20construction%20work%20in%20Navi%20Mumbai" target="_blank" class="popup-wa">
-      💬 Chat on WhatsApp
-    </a>
+    <a href="https://wa.me/919702915955?text=Hello%2C%20I%20need%20a%20free%20quote%20for%20construction%20work%20in%20Navi%20Mumbai" target="_blank" class="popup-wa">💬 Chat on WhatsApp</a>
   </div>
 </div>
 
-<!-- ═══ LIGHTBOX ═══ -->
+<!-- LIGHTBOX -->
 <div class="lightbox-backdrop" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button>
+  <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''">✕</button>
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
 </div>
 
-<!-- ═══ FLOATING BUTTONS ═══ -->
+<!-- FLOATING BUTTONS -->
 <div class="floating-stack">
   <button class="float-fab fab-call" onclick="openPopup()" title="Call Now" aria-label="Call Now">📞</button>
   <a href="https://wa.me/919702915955?text=Hello%2C%20I%20need%20a%20free%20quote" target="_blank" class="float-fab fab-wa" title="WhatsApp" aria-label="WhatsApp">💬</a>
 </div>
 
-<!-- ═══ JAVASCRIPT ═══ -->
 <script>
-/* ── NAV SCROLL ── */
+/* NAV */
 window.addEventListener('scroll', () => {
   document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
 });
 
-/* ── HAMBURGER ── */
 let navOpen = false;
 function toggleNav() {
   navOpen = !navOpen;
   const el = document.getElementById('navLinks');
   if (navOpen) {
-    el.style.cssText = `
-      display:flex; flex-direction:column; position:fixed;
-      top:72px; left:0; right:0; background:rgba(255,255,255,0.97);
-      backdrop-filter:blur(20px); padding:20px 24px 28px;
-      gap:4px; border-bottom:1px solid #eaeaea;
-      box-shadow:0 12px 40px rgba(0,0,0,0.1); z-index:999;
-    `;
+    el.style.cssText = `display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);padding:20px 24px 28px;gap:4px;border-bottom:1px solid #eaeaea;box-shadow:0 12px 40px rgba(0,0,0,0.1);z-index:999;`;
   } else {
     el.style.cssText = 'display:none;';
   }
 }
 
-/* ── POPUP ── */
-function openPopup() {
-  document.getElementById('callPopup').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closePopup() {
-  document.getElementById('callPopup').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closePopupOverlay(e) {
-  if (e.target === document.getElementById('callPopup')) closePopup();
-}
+/* POPUP */
+function openPopup() { document.getElementById('callPopup').classList.add('open'); document.body.style.overflow='hidden'; }
+function closePopup() { document.getElementById('callPopup').classList.remove('open'); document.body.style.overflow=''; }
+function closePopupOverlay(e) { if (e.target===document.getElementById('callPopup')) closePopup(); }
 
-/* ── LIGHTBOX ── */
+/* LIGHTBOX */
 function openLightbox(el) {
   const img = el.querySelector('img');
+  if (!img || img.style.display==='none') return;
   document.getElementById('lightboxImg').src = img.src;
   document.getElementById('lightboxImg').alt = img.alt;
   document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 function closeLightbox(e) {
-  if (e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+  if (e.target===document.getElementById('lightbox')) {
     document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.style.overflow='';
   }
 }
 
-/* ── GALLERY FILTER ── */
+/* GALLERY FILTER */
 function filterGallery(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.gallery-item').forEach(item => {
-    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+    item.style.display = (cat==='all' || item.dataset.cat===cat) ? '' : 'none';
   });
 }
 
-/* ── FAQ ── */
+/* FAQ */
 function toggleFaq(btn) {
   const item = btn.parentElement;
   const isOpen = item.classList.contains('open');
@@ -2450,32 +1618,122 @@ function toggleFaq(btn) {
   if (!isOpen) item.classList.add('open');
 }
 
-/* ── FORM SUBMIT ── */
-function submitForm() {
-  const name = document.getElementById('fName').value.trim();
-  const phone = document.getElementById('fPhone').value.trim();
-  const service = document.getElementById('fService').value;
-  const area = document.getElementById('fArea').value.trim();
-  const msg = document.getElementById('fMsg').value.trim();
-
-  if (!name || !phone || !service || !area) {
-    alert('Please fill in all required fields (Name, Phone, Service, Area).');
-    return;
-  }
-
-  const waText = encodeURIComponent(
-    `Hello Pranjal Civil Construction! 🏗️\n\n*New Website Enquiry*\n━━━━━━━━━━━━━\n👤 Name: ${name}\n📞 Phone: ${phone}\n🔧 Service: ${service}\n📍 Area: ${area}\n${msg ? `📝 Details: ${msg}\n` : ''}━━━━━━━━━━━━━\nPlease provide a free quote. Thank you!`
-  );
-  window.open(`https://wa.me/919702915955?text=${waText}`, '_blank');
-  document.getElementById('successBanner').style.display = 'block';
-  setTimeout(() => { document.getElementById('successBanner').style.display = 'none'; }, 5000);
+/* QUICK INQUIRY FORM */
+function handleQuickSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      form.reset();
+      const s = document.getElementById('qiSuccess');
+      s.style.display = 'block';
+      setTimeout(() => { s.style.display = 'none'; }, 5000);
+    }
+  }).catch(() => {
+    const s = document.getElementById('qiSuccess');
+    s.style.display = 'block';
+    s.textContent = '✅ Thank you! We\'ll contact you within 2 hours.';
+    setTimeout(() => { s.style.display = 'none'; }, 5000);
+  });
 }
 
-/* ── ANIMATED COUNTERS ── */
+/* MAIN ENQUIRY FORM */
+function handleMainSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      form.reset();
+      const s = document.getElementById('mainSuccessBanner');
+      s.style.display = 'block';
+      setTimeout(() => { s.style.display = 'none'; }, 6000);
+    }
+  }).catch(() => {
+    const s = document.getElementById('mainSuccessBanner');
+    s.style.display = 'block';
+    setTimeout(() => { s.style.display = 'none'; }, 6000);
+  });
+}
+
+/* STAR RATING */
+let currentRating = 0;
+function setRating(val) {
+  currentRating = val;
+  document.querySelectorAll('.star-pick').forEach((s, i) => {
+    s.classList.toggle('active', i < val);
+  });
+}
+
+/* WRITE REVIEW */
+function submitReview() {
+  const name = document.getElementById('rvName').value.trim();
+  const location = document.getElementById('rvLocation').value.trim();
+  const msg = document.getElementById('rvMessage').value.trim();
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!currentRating) { alert('Please select a star rating.'); return; }
+  if (!msg) { alert('Please write your review.'); return; }
+
+  const review = { name, location, rating: currentRating, msg, date: new Date().toLocaleDateString('en-IN', { month: 'short', year: 'numeric' }) };
+  const stored = JSON.parse(localStorage.getItem('pcc_reviews') || '[]');
+  stored.push(review);
+  localStorage.setItem('pcc_reviews', JSON.stringify(stored));
+
+  addReviewCard(review, true);
+
+  document.getElementById('rvName').value = '';
+  document.getElementById('rvLocation').value = '';
+  document.getElementById('rvMessage').value = '';
+  currentRating = 0;
+  document.querySelectorAll('.star-pick').forEach(s => s.classList.remove('active'));
+  alert('✅ Thank you for your review!');
+}
+
+function addReviewCard(r, isNew) {
+  const stars = '★'.repeat(r.rating) + (r.rating < 5 ? '<span style="color:var(--grey-300)">' + '★'.repeat(5 - r.rating) + '</span>' : '');
+  const initials = r.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+  const el = document.createElement('div');
+  el.className = 'dynamic-review-card';
+  el.innerHTML = `
+    <div class="testi-stars-wrap" style="margin-bottom:10px;">
+      <span class="testi-stars">${stars}</span>
+      <span class="testi-rating-num">${r.rating}.0</span>
+      ${isNew ? '<span class="new-badge">New</span>' : ''}
+    </div>
+    <p class="testi-text" style="margin-bottom:12px;">${r.msg}</p>
+    <div class="testi-footer">
+      <div class="testi-author">
+        <div class="testi-avatar">${initials}</div>
+        <div>
+          <div class="testi-name">${r.name}</div>
+          ${r.location ? `<div class="testi-loc">📍 ${r.location}</div>` : ''}
+        </div>
+      </div>
+      <div class="testi-date">${r.date}</div>
+    </div>
+  `;
+  document.getElementById('dynamicReviews').prepend(el);
+}
+
+function loadStoredReviews() {
+  const stored = JSON.parse(localStorage.getItem('pcc_reviews') || '[]');
+  stored.slice().reverse().forEach(r => addReviewCard(r, false));
+}
+loadStoredReviews();
+
+/* COUNTER ANIMATION */
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
-  const duration = 1800;
-  const step = target / (duration / 16);
+  const step = target / (1800 / 16);
   let current = 0;
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
@@ -2484,16 +1742,14 @@ function animateCounter(el) {
   }, 16);
 }
 
-/* ── SCROLL REVEAL + COUNTERS ── */
+/* SCROLL REVEAL */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Trigger counters
       entry.target.querySelectorAll('.counter').forEach(c => {
         if (!c.dataset.counted) { c.dataset.counted = '1'; animateCounter(c); }
       });
-      // Trigger stat card counters directly
       if (entry.target.classList.contains('stat-card')) {
         entry.target.querySelectorAll('.counter').forEach(c => {
           if (!c.dataset.counted) { c.dataset.counted = '1'; animateCounter(c); }
@@ -2503,16 +1759,14 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stat-card').forEach(el => {
-  revealObserver.observe(el);
-});
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stat-card').forEach(el => revealObserver.observe(el));
 
-/* ── KEYBOARD ESCAPE ── */
+/* ESC KEY */
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
+  if (e.key==='Escape') {
     closePopup();
     document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.style.overflow='';
   }
 });
 </script>
